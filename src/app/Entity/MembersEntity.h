@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
 #include "MemberInfo.h"
 
 class MembersEntity
@@ -16,10 +17,16 @@ public:
     MembersEntity();
     ~MembersEntity();
     void loadMembersInfo();
-    // void addMemberInfo(MemberInfo member);
-    // void delMemberInfo(MemberInfo member);
-    // void makeDBMembersInfo();
-    void printMemberInfo();
+    void addMemberInfo(MemberInfo member);
+    bool delMemberInfo(int *cardNum);
+    bool delMemberInfo(std::string name);
+    void printMemberInfo(int index);
+    void printMemberINfo(int *cardNum);
+    void printMemberInfo(std::string name);
+    // bool findMemberinfo(int id);
+    bool findMemberinfo(int *cardNum);
+    bool findMemberinfo(std::string name);
+    void memortToDB();
 };
 
 #endif
