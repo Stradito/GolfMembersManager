@@ -16,7 +16,9 @@ void Controller::updateEvent(DeviceData data)
         int cardNumber[5];
         for (int i=0; i<5; i++) {
             cardNumber[i] = data.devData[i];
+            // std::cout << cardNumber[i] << std::endl;
         }
+        // std::cout << cardNumber << std::endl;
         membersManageService->checkCardNumber(cardNumber);
     }
 
@@ -24,9 +26,9 @@ void Controller::updateEvent(DeviceData data)
         membersManageService->updateStateEvent("ModeButton");
     }
 
-    std::cout << data.devName << " : ";
-    for (const auto data : data.devData) {
-        std::cout << std::hex<< data << " ";
-    }
-    std::cout << std::endl;
+    // std::cout << data.devName << " : ";
+    // for (const auto data : data.devData) {
+    //     std::cout << std::hex<< data << " ";
+    // }
+    // std::cout << std::endl;
 }

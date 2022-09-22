@@ -33,12 +33,13 @@ bool Listener::checkRfid()
     prevCheckTime = millis();
 
     if (rfid->isCard()) return true;
-
-    uint8_t byte;
-    if((byte = rfid->mfrc522_request(PICC_REQALL, rfidData)) == CARD_FOUND) {
-        memset(rfidData, 0, sizeof(rfidData));
-        rfid -> mfrc522_get_card_serial(rfidData);
-        return true;
-    }
     return false;
+
+    // uint8_t byte;
+    // if((byte = rfid->mfrc522_request(PICC_REQALL, rfidData)) == CARD_FOUND) {
+    //     memset(rfidData, 0, sizeof(rfidData));
+    //     rfid -> mfrc522_get_card_serial(rfidData);
+    //     return true;
+    // }
+    // return false;
 }

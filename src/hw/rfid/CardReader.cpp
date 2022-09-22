@@ -26,8 +26,8 @@ DeviceData CardReader::getCardNumber()
     cardData.devName = "cardReader";
     cardData.devData.clear();      // std::vector<int> devData;
     for (const auto data : rfidData) {
-        // cardData.devData.push_back((int)data);
-        cardData.devData.emplace_back((int)data);
+        cardData.devData.push_back((int)data);
+        // cardData.devData.emplace_back((int)data);
     }
     return cardData;
 }

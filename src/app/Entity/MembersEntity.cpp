@@ -31,7 +31,7 @@ void MembersEntity::loadMembersInfo()
 
 void MembersEntity::addMemberInfo(MemberInfo member)
 {
-    vecMembersList.emplace_back(member);
+    vecMembersList.push_back(member);
 }
 
 bool MembersEntity::delMemberInfo(int *cardNum)
@@ -60,7 +60,7 @@ void MembersEntity::printMemberInfo(int index)
         fprintf(stderr, "out of ranget membercount!\n");
         return;
     }
-    printf("%05d %s %s %s %03d-%03d-%03d-%03d-%03d\n",
+    printf("%05d %s %s %s %02x-%02x-%02x-%02x-%02x\n",
     vecMembersList[index].id, 
     vecMembersList[index].name, 
     vecMembersList[index].address, 
@@ -72,7 +72,7 @@ void MembersEntity::printMemberInfo(int index)
     vecMembersList[index].cardNum[4]);
 }
 
-void MembersEntity::printMemberINfo(int *cardNum)
+void MembersEntity::printMemberInfo(int *cardNum)
 {
     for (const auto &member : vecMembersList) {
         if (memcmp(member.cardNum, cardNum, sizeof(member.cardNum)) == 0) {

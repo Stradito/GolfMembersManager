@@ -21,9 +21,8 @@ public:
     bool delMemberInfo(int *cardNum);
     bool delMemberInfo(std::string name);
     void printMemberInfo(int index);
-    void printMemberINfo(int *cardNum);
+    void printMemberInfo(int *cardNum);
     void printMemberInfo(std::string name);
-    // bool findMemberinfo(int id);
     bool findMemberinfo(int *cardNum);
     bool findMemberinfo(std::string name);
     void memortToDB();
